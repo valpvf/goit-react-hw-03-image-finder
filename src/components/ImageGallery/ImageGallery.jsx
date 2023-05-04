@@ -1,7 +1,8 @@
+import { Component } from 'react';
+import PT from 'prop-types';
+
 import Button from 'components/Button/Button';
 import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
-import { Component } from 'react';
-
 import getSearchGalleryApi from 'services/galleryApi';
 import Loader from 'components/Loader/Loader';
 import Modal from 'components/Modal/Modal';
@@ -80,5 +81,9 @@ class ImageGallery extends Component {
     );
   }
 }
+
+ImageGallery.propTypes = {
+  query: PT.string,
+};
 
 export default ImageGallery;

@@ -1,3 +1,5 @@
+import PT from 'prop-types';
+
 import { Component } from 'react';
 import { createPortal } from 'react-dom';
 
@@ -32,5 +34,10 @@ class Modal extends Component {
     );
   }
 }
+
+Modal.propTypes = {
+  modalData: PT.objectOf(PT.string),
+  closeModal: PT.func,
+};
 
 export default Modal;

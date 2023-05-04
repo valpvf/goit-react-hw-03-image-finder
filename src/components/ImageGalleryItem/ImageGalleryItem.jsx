@@ -1,3 +1,5 @@
+import PT from 'prop-types';
+
 const ImageGalleryItem = ({ gallery, openModal }) => {
   return gallery.map(el => (
     <li
@@ -12,6 +14,15 @@ const ImageGalleryItem = ({ gallery, openModal }) => {
       />
     </li>
   ));
+};
+
+ImageGalleryItem.propTypes = {
+  gallery: PT.array({
+    id: PT.number.isRequired,
+    largeImageURL: PT.string.isRequired,
+    tags: PT.string.isRequired,
+  }),
+  openModal: PT.func,
 };
 
 export default ImageGalleryItem;

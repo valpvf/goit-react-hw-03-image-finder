@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PT from 'prop-types';
 
 class Searchbar extends Component {
   state = {
@@ -31,5 +32,9 @@ class Searchbar extends Component {
     );
   }
 }
+
+Searchbar.propTypes = {
+  setQuery: PT.func(PT.string),
+};
 
 export default Searchbar;
