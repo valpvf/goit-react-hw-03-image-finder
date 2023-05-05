@@ -47,7 +47,9 @@ class ImageGallery extends Component {
     this.setState({ isLoading: true });
     try {
       const data = await getSearchGalleryApi(this.props.query, this.state.page);
-      this.setState({ gallery: [...this.state.gallery, ...data.hits] });
+      this.setState(prevState => ({
+        gallery: [...prevState.gallery, ...data.hits],
+      }));
     } catch (error) {
       this.setState({ error: error.message });
     } finally {
@@ -71,7 +73,9 @@ class ImageGallery extends Component {
           <ImageGalleryItem gallery={gallery} openModal={this.toggleModal} />
         </ul>
         <div className="wrapBtn">
-          {gallery.length > 0 && <Button onClick={this.changePage} />}
+          {this.state.gallery.length > 0 &&
+            this.state.gallery.length % 12 === 0 &&
+            !isLoading && <Button onClick={this.changePage} />}
           {isLoading && <Loader />}
         </div>
         {modalData && (

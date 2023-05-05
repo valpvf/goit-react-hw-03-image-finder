@@ -34,7 +34,7 @@ class Searchbar extends Component {
 }
 
 Searchbar.propTypes = {
-  setQuery: PT.func(PT.string),
+  setQuery: PT.func,
 };
 
 export default Searchbar;

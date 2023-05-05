@@ -17,11 +17,7 @@ const ImageGalleryItem = ({ gallery, openModal }) => {
 };
 
 ImageGalleryItem.propTypes = {
-  gallery: PT.array({
-    id: PT.number.isRequired,
-    largeImageURL: PT.string.isRequired,
-    tags: PT.string.isRequired,
-  }),
+  gallery: PT.array,
   openModal: PT.func,
 };
 
